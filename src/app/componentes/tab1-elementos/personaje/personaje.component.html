@@ -1,0 +1,76 @@
+<ion-card class="tarjetapersonaje">
+  <ion-avatar class="imagenpersonaje1">
+    <img class="imagenpersonaje2" alt="Imagen de personaje de Futurama" src="{{personaje.image}}" />
+  </ion-avatar>
+  <ion-card-header>
+    <ion-card-title>{{personaje.name}}</ion-card-title>
+    <ion-card-subtitle>{{personaje.species}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    Uno de los personajes que aparecen en la serie Futurama.
+    <ion-button expand="block" shape="round" size="large" id="{{personaje.id}}">VER MÁS</ion-button>
+  </ion-card-content>
+</ion-card>
+
+<ion-modal #modal trigger="{{personaje.id}}" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+  <ng-template>
+    <ion-content>
+      <swiper-container>
+
+        <swiper-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                {{personaje.gender}}
+              </ion-card-title>
+              <ion-card-subtitle>
+                Género
+              </ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </swiper-slide>
+
+        <swiper-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                {{personaje.status}}
+              </ion-card-title>
+              <ion-card-subtitle>
+                Estado
+              </ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </swiper-slide>
+
+        <swiper-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                {{personaje.species}}
+              </ion-card-title>
+              <ion-card-subtitle>
+                Especie
+              </ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </swiper-slide>
+
+        <swiper-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                {{personaje.createdAt}}
+              </ion-card-title>
+              <ion-card-subtitle>
+                Creado en
+              </ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </swiper-slide>
+
+      </swiper-container>
+    </ion-content>
+  </ng-template>
+</ion-modal>
